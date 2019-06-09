@@ -1,0 +1,17 @@
+
+<h2>Student Form</h2>
+
+<%= form_tag students_path do %>
+<br>
+<%= text_field_tag :'student[first_name]' %>
+<br><br>
+<%= text_field_tag :'student[last_name]' %>
+<br><br>
+<%= submit_tag "Submit Student" %>
+<% end %>
+<br><br>
+<div>
+  <% @students.each do |student| %>
+    <div><%= link_to student.to_s, student_path(student) %></div>
+  <% end %>
+</div>
